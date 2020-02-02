@@ -2,11 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     [SerializeField] float mainThrust = 750f;
     [SerializeField] float rcsThrust = 100f;
+    [SerializeField] ParticleSystem exhaustParticle;
+    [SerializeField] ParticleSystem deathParticle;
+    [SerializeField] ParticleSystem successParticle;
 
     public Joystick joystick;
     public ThrustButton joyButton;
@@ -24,17 +27,52 @@ public class Player : MonoBehaviour
     {
         ThurstUp();
         Rotate();
-        if (Input.GetKey(KeyCode.W))
-        {
-            ThurstUpTwo();
-        }
+        ThurstUpTwo();
         RespondToRotateInput();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        switch (collision.gameObject.tag)
+        {
+            case "Launch Pad":
+                break;
+            case "Landing Pad":
+                StartSuccessSequence();
+                break;
+            case "Default":
+                StartDeathSequence();
+                break;
+        }
+    }
+
+    private void StartSuccessSequence()
+    {
+        SceneManager.LoadScene(1);
+        successParticle.Play();
+    }
+
+    private void StartDeathSequence()
+    {
+        deathParticle.Play();
+        Destroy(gameObject);
+        SceneManager.LoadScene(0);
     }
 
     private void ThurstUpTwo()
     {
-        float shipThrust = mainThrust * Time.deltaTime;
-        myRigidbody.AddRelativeForce(Vector3.up * shipThrust);
+        if (Input.GetKey(KeyCode.W))
+        {
+            float shipThrust = mainThrust * Time.deltaTime;
+            myRigidbody.AddRelativeForce(Vector3.up * shipThrust);
+            exhaustParticle.Play();
+        }
+        else
+        {
+            exhaustParticle.Stop();
+        }
+        
+          
     }
 
     private void RespondToRotateInput()

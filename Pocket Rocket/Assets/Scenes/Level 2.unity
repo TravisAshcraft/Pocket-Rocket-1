@@ -1383,7 +1383,7 @@ GameObject:
   - component: {fileID: 1673617388}
   m_Layer: 0
   m_Name: Cube (4)
-  m_TagString: Untagged
+  m_TagString: Default
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1462,6 +1462,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!198 &1836934946 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6075011477844206184, guid: bdaa2dcf493bf6446aacad13bac2211f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2838128420196821810}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1911751327 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4915768377554000505, guid: bdaa2dcf493bf6446aacad13bac2211f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2838128420196821810}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &2064503921 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4786814377696705112, guid: bdaa2dcf493bf6446aacad13bac2211f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2838128420196821810}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2145376185
 GameObject:
   m_ObjectHideFlags: 0
@@ -1595,7 +1613,7 @@ GameObject:
   - component: {fileID: 413320980137574354}
   m_Layer: 0
   m_Name: Obstacle 1
-  m_TagString: Untagged
+  m_TagString: Default
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1629,7 +1647,7 @@ GameObject:
   - component: {fileID: 430082463480436000}
   m_Layer: 0
   m_Name: Obstacle 4
-  m_TagString: Untagged
+  m_TagString: Default
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1833,6 +1851,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 949783587444352860, guid: bdaa2dcf493bf6446aacad13bac2211f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.35280505
+      objectReference: {fileID: 0}
+    - target: {fileID: 949783587444352860, guid: bdaa2dcf493bf6446aacad13bac2211f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.35280505
+      objectReference: {fileID: 0}
+    - target: {fileID: 949783587444352860, guid: bdaa2dcf493bf6446aacad13bac2211f,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.35280505
+      objectReference: {fileID: 0}
+    - target: {fileID: 949783587444352860, guid: bdaa2dcf493bf6446aacad13bac2211f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.773
+      objectReference: {fileID: 0}
+    - target: {fileID: 949783587444352860, guid: bdaa2dcf493bf6446aacad13bac2211f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927314671918557313, guid: bdaa2dcf493bf6446aacad13bac2211f,
+        type: 3}
+      propertyPath: m_Name
+      value: Success
+      objectReference: {fileID: 0}
     - target: {fileID: 2838128420251278861, guid: bdaa2dcf493bf6446aacad13bac2211f,
         type: 3}
       propertyPath: joystick
@@ -1848,6 +1896,21 @@ PrefabInstance:
       propertyPath: rcsThrust
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 2838128420251278861, guid: bdaa2dcf493bf6446aacad13bac2211f,
+        type: 3}
+      propertyPath: exhaustParticle
+      value: 
+      objectReference: {fileID: 2064503921}
+    - target: {fileID: 2838128420251278861, guid: bdaa2dcf493bf6446aacad13bac2211f,
+        type: 3}
+      propertyPath: deathParticle
+      value: 
+      objectReference: {fileID: 1911751327}
+    - target: {fileID: 2838128420251278861, guid: bdaa2dcf493bf6446aacad13bac2211f,
+        type: 3}
+      propertyPath: successParticle
+      value: 
+      objectReference: {fileID: 1836934946}
     - target: {fileID: 2838128420251278862, guid: bdaa2dcf493bf6446aacad13bac2211f,
         type: 3}
       propertyPath: m_Name
@@ -1907,6 +1970,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4786814377696705112, guid: bdaa2dcf493bf6446aacad13bac2211f,
+        type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4786814377696705112, guid: bdaa2dcf493bf6446aacad13bac2211f,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 35.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4786814377696705112, guid: bdaa2dcf493bf6446aacad13bac2211f,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8127203988321696945, guid: bdaa2dcf493bf6446aacad13bac2211f,
+        type: 3}
+      propertyPath: m_Name
+      value: Exhaust
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdaa2dcf493bf6446aacad13bac2211f, type: 3}
@@ -2063,7 +2146,7 @@ GameObject:
   - component: {fileID: 4067362568913032195}
   m_Layer: 0
   m_Name: Obstacle 2
-  m_TagString: Untagged
+  m_TagString: Default
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
