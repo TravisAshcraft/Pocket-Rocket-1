@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,7 +24,36 @@ public class Player : MonoBehaviour
     {
         ThurstUp();
         Rotate();
-      
+        if (Input.GetKey(KeyCode.W))
+        {
+            ThurstUpTwo();
+        }
+        RespondToRotateInput();
+    }
+
+    private void ThurstUpTwo()
+    {
+        float shipThrust = mainThrust * Time.deltaTime;
+        myRigidbody.AddRelativeForce(Vector3.up * shipThrust);
+    }
+
+    private void RespondToRotateInput()
+    {
+        if (Input.GetKey(KeyCode.A))
+        {
+            RotateManually(rcsThrust * Time.deltaTime);
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            RotateManually(-rcsThrust * Time.deltaTime);
+        }
+    }
+
+    private void RotateManually(float rotationThisFrame)
+    {
+        myRigidbody.freezeRotation = true; // take manual control of rotation
+        transform.Rotate(Vector3.forward * rotationThisFrame);
+        myRigidbody.freezeRotation = false; // resume physics control of rotation
     }
 
     private void Rotate()

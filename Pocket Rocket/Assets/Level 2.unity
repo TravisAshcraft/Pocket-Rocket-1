@@ -1843,6 +1843,11 @@ PrefabInstance:
       propertyPath: joyButton
       value: 
       objectReference: {fileID: 239435635}
+    - target: {fileID: 2838128420251278861, guid: bdaa2dcf493bf6446aacad13bac2211f,
+        type: 3}
+      propertyPath: rcsThrust
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 2838128420251278862, guid: bdaa2dcf493bf6446aacad13bac2211f,
         type: 3}
       propertyPath: m_Name
