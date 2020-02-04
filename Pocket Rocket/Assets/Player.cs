@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     [SerializeField] float mainThrust = 750f;
@@ -13,6 +14,8 @@ public class Player : MonoBehaviour
 
     public Joystick joystick;
     public ThrustButton joyButton;
+
+  
 
     Rigidbody myRigidbody;
     // Start is called before the first frame update
@@ -25,25 +28,23 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ThurstUp();
-        Rotate();
+       // ThurstUp();
+       // Rotate();
         ThurstUpTwo();
         RespondToRotateInput();
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        switch (collision.gameObject.tag)
-        {
-            case "Launch Pad":
-                break;
-            case "Landing Pad":
-                StartSuccessSequence();
-                break;
-            case "Default":
-                StartDeathSequence();
-                break;
-        }
+            switch (collision.gameObject.tag)
+            {
+                case "Landing Pad":
+                    StartSuccessSequence();
+                    break;
+                case "Default":
+                    StartDeathSequence();
+                    break;
+            }
     }
 
     private void StartSuccessSequence()
@@ -94,7 +95,7 @@ public class Player : MonoBehaviour
         myRigidbody.freezeRotation = false; // resume physics control of rotation
     }
 
-    private void Rotate()
+   /* private void Rotate()
     {
         transform.Rotate(0, 0,-joystick.Horizontal * rcsThrust);
     }
@@ -107,4 +108,5 @@ public class Player : MonoBehaviour
             myRigidbody.AddRelativeForce(Vector3.up * shipThrust);
         }
     }
+   */
 }

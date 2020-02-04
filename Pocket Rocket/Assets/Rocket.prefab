@@ -4819,10 +4819,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainThrust: 600
-  rcsThrust: 1
-  exhaustParticle: {fileID: 0}
-  deathParticle: {fileID: 0}
-  successParticle: {fileID: 0}
+  rcsThrust: 100
+  exhaustParticle: {fileID: 4786814377696705112}
+  deathParticle: {fileID: 4915768377554000505}
+  successParticle: {fileID: 6075011477844206184}
   joystick: {fileID: 0}
   joyButton: {fileID: 0}
 --- !u!1 &3940981475562159368
