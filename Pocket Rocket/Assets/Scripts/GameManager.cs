@@ -13,4 +13,9 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("Options Menu");
     }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
 }
